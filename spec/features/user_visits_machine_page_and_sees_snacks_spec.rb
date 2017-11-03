@@ -14,6 +14,7 @@ describe "As a User" do
       expect(page).to have_content(snack1.price)
       expect(page).to have_content(snack2.name)
       expect(page).to have_content(snack2.price)
+      expect(page).to have_content("Average Price: $3")
     end
   end
 end
