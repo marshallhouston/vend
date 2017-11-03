@@ -25,12 +25,12 @@ describe "As a user" do
       snack = Snack.create(name: "burger", price: 2.50)
       machine1 = snack.machines.create(location: "Don's Mixed Drinks", owner: sam)
       machine2 = snack.machines.create(location: "Bobo", owner: sam)
-
+      machine1.snacks.create(name: "coffee", price: 3.50)
       visit snack_path(snack)
-      
+
       expect(page).to have_content(machine1.location)
       expect(page).to have_content(machine2.location)
-
+      expect(page).to have_content("#{snack.machines.first.location} (2 kinds of snacks, average price of $3.00)")
       end
     end
   end
