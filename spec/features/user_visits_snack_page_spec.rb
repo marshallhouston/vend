@@ -14,8 +14,8 @@ describe "As a user" do
       expect(page).to_not have_content(snack2.name)
       expect(page).to have_content(snack1.price)
       expect(page).to have_content("Locations")
-      expect(page).to have_content(snack1.machine.location)
-      expect(page).to have_content("#{snack1.machine.location} (2 kinds of snacks, average price of $3)")
+      expect(page).to have_content(snack1.machines.first.location)
+      expect(page).to have_content("#{snack1.machines.first.location} (2 kinds of snacks, average price of $3.00)")
     end
   end
 end
